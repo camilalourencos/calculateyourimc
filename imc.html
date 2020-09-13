@@ -1,0 +1,50 @@
+<meta charset = "UTF-8">
+
+<script> 
+
+    function breakrow() {
+
+        document.write("<br>");
+    }
+
+
+    function show(sentence) { 
+
+        document.write(sentence);
+        breakrow();
+
+    }
+
+    function calculateImc(peso, altura) {
+
+        return peso / (altura*altura);
+        // é preciso usar o return para que a função retorne o resultado (pensar que é preciso sempre dar todas as instruções)
+        breakrow();
+    }
+
+
+    var nome = prompt("Informe seu nome");
+    var pesoInformado =  prompt("Informe seu peso"); // prompt é usado para receber input do usuário
+    var alturaInformada = prompt("Informe sua altura");
+
+    var imc = calculateImc(pesoInformado, alturaInformada);
+
+    show("<h1>"+nome+ ", o seu IMC é "+Math.round(imc)+"</h1>");
+
+    if(imc < 18.5) {
+
+        show("Você está abaixo do recomendado")
+    }
+
+    if(imc > 35) {
+
+        show("Você está acima do recomendado")
+    }
+
+    if(imc >= 18.5 && imc <= 35) {
+
+            show("<h2>Seu IMC está excelente!</h2>")
+    }
+    
+
+</script>
